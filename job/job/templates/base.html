@@ -25,11 +25,13 @@
 <body>
     
     {% include "base/header.html" %}
-    {% include "base/banner_area.html" %}
-    {% block category %}
     {% block home %}
-    {% endblock home %}
+    {% include "base/banner_area.html" %}
+    {% block about %}
+    {% block category %}
     {% endblock category %}
+    {% endblock about %}
+    {% endblock home %}
     {% include "base/footer.html" %}
 
     <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
