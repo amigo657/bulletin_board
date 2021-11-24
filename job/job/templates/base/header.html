@@ -33,10 +33,17 @@
                                     <li><a href="elements.html">Elements</a></li>
                                 </ul>
                             </li>
+                            {% if user.is_anonymous %}
                             <li class="menu-btn">
                                 <a href="{% url 'log_in' %}" class="login">log in</a>
-                                <a href="#" class="template-btn">sign up</a>
+                                <a href="{% url 'sign_in' %}" class="template-btn">sign up</a>
                             </li>
+                            {% else %}
+                            <li class="menu-btn">
+                                <a href="/admin/" class="template-btn">{{user.username}}</a>
+                                <a href="{% url 'log_out' %}">Log Out</a>
+                            </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
