@@ -26,11 +26,11 @@
     
     {% include "base/header.html" %}
     {% block home %}
+    {% block user %}
     {% include "base/banner_area.html" %}
-    {% block about %}
-    {% block category %}
-    {% endblock category %}
-    {% endblock about %}
+    {% endblock user %}
+    {% block about %}{% endblock about %}
+    {% block category %}{% endblock category %}
     {% endblock home %}
     {% include "base/footer.html" %}
 
