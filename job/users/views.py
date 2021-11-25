@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from users.forms import UserLogIn, UserSignIn
+from django.views import View
 from django.shortcuts import redirect
 from django.contrib.auth import logout as log_out
 from django.contrib.auth.decorators import login_required

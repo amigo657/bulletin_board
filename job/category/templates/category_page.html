@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block category %}
+
 <!-- Job Single Content Starts -->
     <section class="job-single-content section-padding">
         <div class="container">
@@ -21,6 +22,19 @@
                 <div class="col-lg-8">
                     <div class="main-content">
                         <div class="single-content1">
+                            <div class="single-job mb-4 d-lg-flex justify-content-between">
+                            <div class="job-text">
+                            {% for work in works %}
+                                <div>
+                                    <h1><a href="">{{ work.work_class }}</a></h1>
+                                    <li class="mb-3">{{ work.title }}</li>
+                                    <p><i class="fa fa-map-marker"></i> {{ work.place }} </p>
+                                    <p><i class="fa fa-clock-o"></i> {{ work.work_time }} </p>
+                                    <p>$  {{ work.salary }}</p>
+                                </div>
+                            {% endfor %}
+                            </div>
+                            </div>
                             <div class="single-job mb-4 d-lg-flex justify-content-between">
                                 <div class="job-text">
                                     <h4>Assistant Executive - Production/ Quality Control</h4>
@@ -172,7 +186,3 @@
 
 {% comment %} {% include "job/home/templates/home/newsletter.html" %} {% endcomment %}
 {% endblock category %}
-
-{% block banner_area %}
-{% include 'base/banner_area.html' %}
-{% endblock banner_area %}

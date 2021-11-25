@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from category.models import Work
 
 def category_page(request):
-    return render(request, "category_page.html", {})
+    works = Work.objects.all()
+    return render(request, "category_page.html", {'works': works})
