@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from users.forms import UserLogIn, UserSignIn
+from django.views import View
 from django.shortcuts import redirect
 from django.contrib.auth import logout as log_out
 from django.contrib.auth.decorators import login_required
@@ -16,8 +17,6 @@ def signin(request):
     return render(request, "sign_in.html", context)
 
 def login(request):
-    if not request.user.is_anonymous:
-        return redirect("home_page")
     context = {"login_form": UserLogIn()}
     if request.method == "POST":
         user_form = UserLogIn(request.POST)
@@ -30,4 +29,4 @@ def login(request):
 @login_required(login_url="log_in")
 def logout(request):
     log_out(request)
-    return redirect("home")
+    return redirect("home_page")

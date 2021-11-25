@@ -18,10 +18,10 @@ from django.dispatch.dispatcher import receiver
 
 class User(AbstractUser):
     phone = models.CharField(
-        max_length = 15,
+        max_length = 20,
         # validators = [_PhoneValidator()],
         null = True,
-        verbose_name = "User",
+        verbose_name = "Phone",
     )
 
     def __str__(self):
