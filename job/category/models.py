@@ -1,4 +1,4 @@
-from re import VERBOSE  #Читабельное название модели, в единственном числе
+# from re import VERBOSE  #Читабельное название модели, в единственном числе
 from django.db import models
 from django.utils import timezone
 
