@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from users.forms import UserLogIn, UserSignIn
-from django.views import View
 from django.shortcuts import redirect
 from django.contrib.auth import logout as log_out
 from django.contrib.auth.decorators import login_required
@@ -9,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 def signin(request):
     context = {"signin_form": UserSignIn()}
     if request.method == "POST":
+        # Создаём экземпляр формы и заполняем данными из запроса (связывание, binding):
         user_form = UserSignIn(request.POST)
         if user_form.is_valid():
             user_form.save()
